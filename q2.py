@@ -66,19 +66,12 @@ def compressed_stack_length(lst):
     """
     # TODO: Implement your solution here
     stack = []
-
     for num in lst:
-        # If the stack isn't empty and the top matches current number,
-        # they cancel each other out
         if stack and stack[-1] == num:
             stack.pop()
         else:
             stack.append(num)
-
     return len(stack)
-
-
-
 if __name__ == "__main__":
     # Test your solution here
     print(compressed_stack_length([1, 2, 2, 3]))    # Should print: 2
