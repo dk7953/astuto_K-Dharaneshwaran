@@ -52,25 +52,18 @@ def first_stable_character(s):
         None
     """
     # TODO: Implement your solution here
-    if not s or len(s) < 2:
+    if not s or len(s)<2:
         return None
-
     n = len(s)
-    i = 0
-
-    while i < n:
-        j = i
-        while j < n and s[j] == s[i]:
+    i=0
+    while i<n:
+        j=i
+        while j<n and s[j] == s[i]:
             j += 1
-
         if j - i >= 2 and s[i] not in s[j:]:
             return s[i]
-
         i = j
-
     return None
-
-
 if __name__ == "__main__":
     # Test your solution here
     print(first_stable_character("abccba"))  # Should print: c
